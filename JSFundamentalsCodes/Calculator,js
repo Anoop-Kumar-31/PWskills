@@ -1,0 +1,50 @@
+function calculator(num1, num2, operator) {
+  let result;
+
+  switch (operator) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    case '/':
+      if (num2 !== 0) {
+        result = num1 / num2;
+      } else {
+        console.log("Error: Division by zero");
+        return;
+      }
+      break;
+    default:
+      console.log("Invalid operator");
+      return;
+  }
+
+  console.log(`Result: ${result}`);
+}
+
+// const rl = require('readline').createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
+
+// rl.question("Enter the first number: ", (num1) => {
+//   rl.question("Enter the second number: ", (num2) => {
+//     rl.question("Enter the operator (+, -, *, /): ", (operator) => {
+//       // Parse the input as numbers
+//       num1 = parseFloat(num1);
+//       num2 = parseFloat(num2);
+//       calculator(num1, num2, operator);
+//       rl.close();
+//     });
+//   });
+// });
+
+const num1 = parseFloat(prompt("Enter the first number:")?this.value:'');
+const num2 = parseFloat(prompt("Enter the second number:")?this.value:'');
+const operator = prompt("Enter the operator (+, -, *, /):");
+calculator(num1, num2, operator);
